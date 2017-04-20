@@ -40,9 +40,7 @@ header {
             opacity: 0.9;
         }
     }
-    @include media-query($on-palm) {
-        text-align: center;
-    }
+
 }
 
 
