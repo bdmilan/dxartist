@@ -3,6 +3,10 @@ layout: post
 title: Sonu Nigam is Right!
 ---
 
+![sonu nigam azaan loudspeaker twitter](/images/sonu-nigam-azaan-loudspeaker-twitter.jpg)
+
+(Source: [twitter](https://twitter.com/CameraaIn/status/854644526165655552){: target="_blank"})
+
 Latest controversy that has emerged after Sonu Nigam's tweet saying loudspeaker for Azaan is forced religiousness. This is an issue that nobody wants to talk about. And when someone raises their voice against the practice, so called pseudo seculars try to either ridicule it or oppress it. 
 
 

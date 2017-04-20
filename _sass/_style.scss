@@ -47,8 +47,15 @@ a {
         border-color: $brand-color;
     }
 }
+
+img {
+    max-width: 100%;
+}
+
+
 .post-list {
     list-style: none;
     padding: 0;
     line-height: 2;
 }
+
