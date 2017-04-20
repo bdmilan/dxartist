@@ -1,7 +1,8 @@
 ### your site title here
 
 title: Dxartist | Disruptive Art
-
+url: https://dxartist.com
+enforce_ssl: dxartist.com
 permalink: /:title
 ### exclude the instructions / write-up in the README.md
 
