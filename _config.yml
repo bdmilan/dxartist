@@ -1,0 +1,16 @@
+### your site title here
+
+title: Dxartist | Disruptive Art
+
+permalink: /:title
+### exclude the instructions / write-up in the README.md
+
+exclude:
+- README.md
+
+
+sass: 
+ style: compressed
+ 
+gems:
+  - jekyll-seo-tag

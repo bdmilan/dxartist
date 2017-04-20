@@ -1,0 +1,54 @@
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system,".SFNSText-Regular","San Francisco","Roboto","Segoe UI","Helvetica Neue","Lucida Grande",Arial,sans-serif;
+    background: transparent;
+    font-size: 20px;
+    line-height: 1.7;
+    color: $text-color;
+    font-weight: 400;
+    -moz-font-feature-settings: "kern" 1;
+    -ms-font-feature-settings: "kern" 1;
+    -o-font-feature-settings: "kern" 1;
+    -webkit-font-feature-settings: "kern" 1;
+    font-feature-settings: "kern" 1;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+
+
+.container {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+
+header {
+    h1 {
+        font-size: 4em;
+        color: #111;
+        span {
+            color: $brand-color;
+        }
+        &:hover {
+            opacity: 0.9;
+        }
+    }
+}
+
+a {
+    text-decoration: none;
+    color: $text-color;
+    padding-bottom: 2px;
+    border-bottom: 1px solid lighten($text-color, 50%);
+    &:hover {
+        border-color: $brand-color;
+    }
+}
+.post-list {
+    list-style: none;
+    padding: 0;
+    line-height: 2;
+}

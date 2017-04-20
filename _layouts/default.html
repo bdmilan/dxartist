@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+    {% seo %}
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+  <div class="container">   
+    <header>
+         <a href="/"><h1>Dx<span>artist</span></h1></a>
+     </header>
+    <div class="main">
+        {{ content }}
+    </div>
+  </div> 
+  <!-- fb comments -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=1576095722632310";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+</body>
+</html>
