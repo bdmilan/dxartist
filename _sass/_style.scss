@@ -22,6 +22,9 @@ body {
 .container {
     max-width: 760px;
     margin: 0 auto;
+    @include media-query($on-palm) {
+        margin: 0 10px;
+    }
 }
 
 
@@ -29,6 +32,7 @@ header {
     h1 {
         font-size: 4em;
         color: #111;
+
         span {
             color: $brand-color;
         }
@@ -36,7 +40,11 @@ header {
             opacity: 0.9;
         }
     }
+    @include media-query($on-palm) {
+        text-align: center;
+    }
 }
+
 
 a {
     text-decoration: none;
