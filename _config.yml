@@ -9,6 +9,7 @@ permalink: /:title
 exclude:
 - README.md
 
+markdown: kramdown
 
 sass: 
  style: compressed
@@ -26,5 +27,4 @@ compress_html:
   startings: []
 
 
-gems:
-  - jekyll-seo-tag
+gems: [jekyll-seo-tag, gemoji]
