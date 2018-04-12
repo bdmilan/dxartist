@@ -1,18 +1,22 @@
 ### your site title here
 
-title: Dxartist | Disruptive Art
+title: Dxartist
 url: https://dxartist.com
-enforce_ssl: dxartist.com
-permalink: /:title
+#baseurl: /hagura # name of the repository
+email: your@email.com
+
+
+
+highlighter: rouge
+markdown: kramdown
 ### exclude the instructions / write-up in the README.md
 
-exclude:
-- README.md
 
-markdown: kramdown
+# Tracker
+analytics: UA-57202838-1
 
-sass: 
- style: compressed
+# Comments
+# disqus-shortname: 
 
 #optimization
 #compress.html
@@ -25,6 +29,15 @@ compress_html:
   blanklines: false
   profile: false
   startings: []
+  
+
+sass:
+ style: compressed
+
+exclude:
+- README.md
 
 
-gems: [jekyll-seo-tag, gemoji]
+plugins: 
+    - jekyll-seo-tag
+    - jekyll-paginate
