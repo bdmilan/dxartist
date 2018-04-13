@@ -17,10 +17,8 @@ layout: compress
   
   <link href="https://fonts.googleapis.com/css?family=Oswald:700&text=DXARTIST" rel="stylesheet">
   {% seo %}
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="/js/nanobar.min.js"></script>
-  <script src="/js/moment.min.js"></script>
-  <script src="/js/jquery.rss.js"></script>
+  
+
   <style>
       .my-class .bar {
       background: linear-gradient(90deg, rgba(243, 72, 104,1) 20.561212851929092%,rgba(242, 71, 103,1) 20.561212851929092%,rgba(237, 0, 83,1) 80.56186457247131%);
@@ -39,7 +37,7 @@ layout: compress
 </div>
   <header>
       <a href="{{site.baseurl}}/"><h1>{{site.title}}</h1></a>
-      <time>{{ "today" | date: "%A, %B %-d, %Y" }}</time>
+      <time id="today"></time>
   </header>
 
     <main>
@@ -48,75 +46,93 @@ layout: compress
     </article>
     </main>
 
+
+
 <footer>
     
     <p class="copy text-center"><small>Copyrights &copy; {{"today" | date: "%Y" }} by {{site.title}}</small></p>
 </footer> 
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/nanobar.min.js"></script>
+<script src="/js/moment.min.js"></script>
+<script src="/js/jquery.rss.js"></script>
+
+<!-- Display today's date -->
 <script>
-var options = {
-	classname: 'my-class',
-    id: 'my-id'
-};
-var nanobar = new Nanobar( options );
-nanobar.go( 30 );
-nanobar.go( 76 );
-nanobar.go(100);
+    var today = moment().format("dddd, MMM Do, YYYY"); 
+    document.getElementById('today').innerHTML += today;
 </script>
 
+<!-- Display top loading bar -->
 <script>
+    var options = {
+        classname: 'my-class',
+        id: 'my-id'
+    };
+    var nanobar = new Nanobar( options );
+    nanobar.go( 30 );
+    nanobar.go( 76 );
+    nanobar.go(100);
+</script>
+
+
+
+<script async>
       jQuery(function($) {
-        $("#rss-feeds-1").rss("https://feeds.feedburner.com/myvoiceopindia",
+          
+        {% for item in site.data.data.websites %}
+          
+        $("#rss-feeds-{{forloop.index}}").rss("{{item.rss}}",
         {
            limit: 6,
             ssl: true,
-           layoutTemplate: "<div class='postcard r'>{entries}</div>",               
-           entryTemplate:'<div class="c-4"><div class="card"><div class="image" style="background-image: url({teaserImageUrl})"></div><div class="meta"><h2>{title}</h2><p>{shortBodyPlain}</p><div class="r footer"><div class="c-6"><p><small class="author">by {author}</small><p></div><div class="c-6"><p class="text-right"><small><a target="_blank" href="{url}">Read on OpIndia</a></small></p></div></div></div></div></div>'
+           layoutTemplate: "<div class='{{item.title}} r'>{entries}</div>",               
+           entryTemplate:'<div class="c-4"><div class="card"><div class="image" style="background-image: url({teaserImageUrl})"></div><div class="meta"><h2>{title}</h2><p>{shortBodyPlain}</p><div class="r footer"><div class="c-6"><p><small class="author">by {author}</small><p></div><div class="c-6"><p class="text-right"><small><a target="_blank" href="{url}">Read on {{item.title}}</a></small></p></div></div></div></div></div>'
             
-        }) 
+        });
+           
+        {% endfor %}
+           
       });
 </script>
-    <script async>
-      jQuery(function($) {
-                  
-        $("#rss-feeds-2").rss("https://feeds.feedburner.com/MediaCrooks",
-        {
-           limit: 6,
-            ssl: true,
-           layoutTemplate: "<div class='mc r'>{entries}</div>",               
-           entryTemplate:'<div class="c-4"><div class="card"><div class="image" style="background-image: url({teaserImageUrl})"></div><div class="meta"><h2>{title}</h2><p>{shortBodyPlain}</p><div class="r footer"><div class="c-6"><p><small class="author">by {author}</small><p></div><div class="c-6"><p class="text-right"><small><a target="_blank" href="{url}">Read on MediaCrooks</a></small></p></div></div></div></div></div>'
-            
-        });
-
-
-        $("#rss-feeds-4").rss("https://postcard.news/politics/feed/",
-        {
-           limit: 6,
-            ssl: true,
-           layoutTemplate: "<div class='gizmodo r'>{entries}</div>",               
-           entryTemplate:'<div class="c-4"><div class="card"><div class="image" style="background-image: url({teaserImageUrl})"></div><div class="meta"><h2>{title}</h2><p>{shortBodyPlain}</p><div class="r footer"><div class="c-6"><p><small class="author">by {author}</small><p></div><div class="c-6"><p class="text-right"><small><a target="_blank" href="{url}">Read on PostCard</a></small></p></div></div></div></div></div>'
-            
-        });
-          
-          
-          
-
-        $("#rss-feeds-5").rss("",
-        {
-           limit: 6,
-            ssl: true,
-           layoutTemplate: "<div class='engadget r'>{entries}</div>",               
-           entryTemplate:'<div class="c-4"><div class="card"><div class="image" style="background-image: url({teaserImageUrl})"></div><div class="meta"><h2>{title}</h2><p>{shortBodyPlain}</p><div class="r footer"><div class="c-6"><p><small class="author">by {author}</small><p></div><div class="c-6"><p class="text-right"><small>   <a target="_blank" href="{url}">Read Full Story</a></small></p></div></div></div></div></div>'
-            
-        })
-          
-          
-          
-          
-          
-      });
-        
-    </script>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   <!-- 
+      
+       <script async>
+         jQuery(function($) {
+                     
+           $("#rss-feeds-2").rss("http://feeds.feedburner.com/rightlogrssfeed",
+           {
+              limit: 6,
+               ssl: true,
+              layoutTemplate: "<div class='rl r'>{entries}</div>",               
+              entryTemplate:'<div class="c-4"><div class="card"><div class="image" style="background-image: url({teaserImageUrl})"></div><div class="meta"><h2>{title}</h2><p>{shortBodyPlain}</p><div class="r footer"><div class="c-6"><p><small class="author">by {author}</small><p></div><div class="c-6"><p class="text-right"><small><a target="_blank" href="{url}">Read on RightLog</a></small></p></div></div></div></div></div>'
+               
+           });
+   
+   
+           $("#rss-feeds-4").rss("https://postcard.news/politics/feed/",
+           {
+              limit: 6,
+               ssl: true,
+              layoutTemplate: "<div class='gizmodo r'>{entries}</div>",               
+              entryTemplate:'<div class="c-4"><div class="card"><div class="image" style="background-image: url({teaserImageUrl})"></div><div class="meta"><h2>{title}</h2><p>{shortBodyPlain}</p><div class="r footer"><div class="c-6"><p><small class="author">by {author}</small><p></div><div class="c-6"><p class="text-right"><small><a target="_blank" href="{url}">Read on PostCard</a></small></p></div></div></div></div></div>'
+               
+           });
+         
+         });
+           
+       </script> -->
 
 {% include analytics.html %}
 </body>

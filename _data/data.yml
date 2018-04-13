@@ -1,0 +1,12 @@
+websites:
+    - title: OpIndia
+      link: http://www.opindia.com/
+      rss: https://feeds.feedburner.com/myvoiceopindia
+      
+    - title: RightLog
+      link: https://rightlog.in
+      rss: http://feeds.feedburner.com/rightlogrssfeed
+      
+    - title: PostCard
+      link: https://postcard.news
+      rss: https://postcard.news/politics/feed/
