@@ -1,7 +1,7 @@
 websites:
     - title: OpIndia
       link: http://www.opindia.com/
-      rss: https://feeds.feedburner.com/myvoiceopindia
+      rss: http://feeds.feedburner.com/Opindiacom
       
     - title: RightLog
       link: https://rightlog.in
