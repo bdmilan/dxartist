@@ -9,4 +9,4 @@ websites:
       
     - title: PostCard
       link: https://postcard.news
-      rss: https://postcard.news/politics/feed/
+      rss: http://feeds.feedburner.com/postcardrssfeed
