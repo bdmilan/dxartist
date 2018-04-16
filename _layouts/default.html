@@ -55,84 +55,32 @@ layout: compress
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="/js/nanobar.min.js"></script>
-<script src="/js/moment.min.js"></script>
+<!-- <script src="/js/moment.min.js"></script> -->
 <script src="/js/jquery.rss.js"></script>
 
-<!-- Display today's date -->
-<script>
-    var today = moment().format("dddd, MMM Do, YYYY"); 
-    document.getElementById('today').innerHTML += today;
-</script>
+<!-- Display today's date - https://stackoverflow.com/questions/1531093/how-do-i-get-the-current-date-in-javascript -->
+
+<script src="/js/time.min.js"></script>
 
 <!-- Display top loading bar -->
 <script>
-    var options = {
-        classname: 'my-class',
-        id: 'my-id'
-    };
-    var nanobar = new Nanobar( options );
-    nanobar.go( 30 );
-    nanobar.go( 76 );
-    nanobar.go(100);
+var options={classname:"my-class",id:"my-id"},nanobar=new Nanobar(options);nanobar.go(30);nanobar.go(76);nanobar.go(100);
 </script>
 
 
 
 <script async>
       jQuery(function($) {
-          
         {% for item in site.data.data.websites %}
-          
-        $("#rss-feeds-{{forloop.index}}").rss("{{item.rss}}",
-        {
-           limit: 6,
+        $("#rss-feeds-{{forloop.index}}").rss("{{item.rss}}", {
+            limit: 6,
             ssl: true,
-           layoutTemplate: "<div class='{{item.title}} r'>{entries}</div>",               
-           entryTemplate:'<div class="c-4"><div class="card"><div class="image" style="background-image: url({teaserImageUrl})"></div><div class="meta"><h2>{title}</h2><p>{shortBodyPlain}</p><div class="r footer"><div class="c-6"><p><small class="author">by {author}</small><p></div><div class="c-6"><p class="text-right"><small><a target="_blank" href="{url}">Read on {{item.title}}</a></small></p></div></div></div></div></div>'
-            
+            layoutTemplate: "<div class='{{item.title}} r'>{entries}</div>",               
+            entryTemplate:'<div class="c-4"><div class="card"><div class="image" style="background-image: url({teaserImageUrl})"></div><div class="meta"><h2>{title}</h2><p>{shortBodyPlain}</p><div class="r footer"><div class="c-6"><p><small class="author">by {author}</small><p></div><div class="c-6"><p class="text-right"><small><a target="_blank" href="{url}">Read on {{item.title}}</a></small></p></div></div></div></div></div>'
         });
-           
         {% endfor %}
-           
       });
 </script>
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   <!-- 
-      
-       <script async>
-         jQuery(function($) {
-                     
-           $("#rss-feeds-2").rss("http://feeds.feedburner.com/rightlogrssfeed",
-           {
-              limit: 6,
-               ssl: true,
-              layoutTemplate: "<div class='rl r'>{entries}</div>",               
-              entryTemplate:'<div class="c-4"><div class="card"><div class="image" style="background-image: url({teaserImageUrl})"></div><div class="meta"><h2>{title}</h2><p>{shortBodyPlain}</p><div class="r footer"><div class="c-6"><p><small class="author">by {author}</small><p></div><div class="c-6"><p class="text-right"><small><a target="_blank" href="{url}">Read on RightLog</a></small></p></div></div></div></div></div>'
-               
-           });
-   
-   
-           $("#rss-feeds-4").rss("https://postcard.news/politics/feed/",
-           {
-              limit: 6,
-               ssl: true,
-              layoutTemplate: "<div class='gizmodo r'>{entries}</div>",               
-              entryTemplate:'<div class="c-4"><div class="card"><div class="image" style="background-image: url({teaserImageUrl})"></div><div class="meta"><h2>{title}</h2><p>{shortBodyPlain}</p><div class="r footer"><div class="c-6"><p><small class="author">by {author}</small><p></div><div class="c-6"><p class="text-right"><small><a target="_blank" href="{url}">Read on PostCard</a></small></p></div></div></div></div></div>'
-               
-           });
-         
-         });
-           
-       </script> -->
 
 {% include analytics.html %}
 </body>
