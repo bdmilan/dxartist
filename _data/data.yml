@@ -1,5 +1,5 @@
 websites:
-    - title: Top India News
+    - title: Top Indian News
       rss: http://feeds.feedburner.com/topgoogleindianews
       format: small
       
