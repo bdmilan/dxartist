@@ -121,9 +121,10 @@ article {
         height: auto;
         background-size: cover;
         background-position: center center;
-        background-repeat: no-repeat;   
+        background-repeat: no-repeat;
+        
         @include media-query($on-palm) {
-            height: 180px;
+            height: 250px !important;
         }
     }
 }
