@@ -97,3 +97,17 @@
     }
     
 }
+
+.gg-0 {
+    grid-gap: 0px !important;
+}
+
+.gg-5 {
+    grid-gap: 5px !important;
+}
+
+.np {
+    [class*="c-"] {
+        padding: 0;
+    }
+}

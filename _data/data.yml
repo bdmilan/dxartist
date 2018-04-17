@@ -1,4 +1,20 @@
 websites:
+    - title: Top India News
+      rss: http://feeds.feedburner.com/topgoogleindianews
+      format: small
+      
+    - title: Top Business News
+      rss: http://feeds.feedburner.com/TopBusinessNewsGoogle
+      format: small
+      
+    - title: Top Tech News
+      rss: http://feeds.feedburner.com/TopTechNewsGoogle
+      format: small
+            
+    - title: Top Sports News
+      rss: http://feeds.feedburner.com/TopSportsNewsGoogle
+      format: small
+      
     - title: OpIndia
       link: http://www.opindia.com/
       rss: http://feeds.feedburner.com/Opindiacom
