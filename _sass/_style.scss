@@ -69,8 +69,8 @@ article {
 .card {
     border: 2px solid $text-color;
     &:hover .image {
-        -webkit-filter: grayscale(0%);
-        filter: grayscale(0%);
+     /*    -webkit-filter: grayscale(0%);
+        filter: grayscale(0%); */
     }
     .image {
         height: 250px;
@@ -78,8 +78,8 @@ article {
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
-        -webkit-filter: grayscale(100%);
-        filter: grayscale(100%);
+/*         -webkit-filter: grayscale(100%);
+        filter: grayscale(100%); */
     }
     .meta {
         padding: 0 1.5em;
