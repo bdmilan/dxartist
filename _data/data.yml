@@ -18,11 +18,14 @@ websites:
     - title: OpIndia
       link: http://www.opindia.com/
       rss: http://feeds.feedburner.com/Opindiacom
+      amp: yes
       
     - title: RightLog
       link: https://rightlog.in
       rss: http://feeds.feedburner.com/rightlogrssfeed
+      amp: yes
       
     - title: PostCard
       link: https://postcard.news
       rss: http://feeds.feedburner.com/postcardrssfeed
+      amp: yes
