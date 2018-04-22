@@ -107,7 +107,7 @@ article {
 }
 
 
-.small {
+/* .small {
     font-size: 0.8em;
     
     p {
@@ -128,6 +128,58 @@ article {
         }
     }
 }
+ */
+
+.small {
+    font-size: 0.8em;
+    @include media-query($on-palm) {
+        display: block !important;
+        
+    }
+    
+    
+    p {
+        margin: 0;
+    }
+    a {
+       text-decoration: none;
+    }
+    
+    .image-small {
+        height: auto;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        
+        @include media-query($on-palm) {
+            height: 70px !important;
+            width: 70px;
+            margin-bottom: 1em;
+            display: inline-block;
+            vertical-align: middle;
+                
+        }
+    }
+    
+    .small-details {
+        @include media-query($on-palm) {
+            width: 75%;
+            margin-left: 1em;
+            margin-bottom: 1em;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
 
 .mb-0 {
     margin-bottom: 0 !important;
